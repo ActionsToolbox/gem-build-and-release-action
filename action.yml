@@ -1,0 +1,23 @@
+name: "Gem Release Action"
+author: "TGWolf"
+description: "A tool for releasing ruby gems to RubyGems.org."
+
+inputs:
+  rubygems-api-key:
+    description: API Key for pushing to rubygems.org
+    required: true
+  push:
+    description: push the ruby gem to rubygems.org
+    required: false
+    default: true
+
+runs:
+  using: 'docker'
+  image: Dockerfile
+  env:
+    RUBYGEMS_API_KEY: $ {{ inputs.rubygems-api-key }}
+    PUSH: $ {{ inputs.push }}
+
+branding:
+  icon: 'activity'
+  color: 'white'
