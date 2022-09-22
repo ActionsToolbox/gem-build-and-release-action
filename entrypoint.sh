@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 echo "Setting up gem credentials..."
 mkdir -p ~/.gem
 cat << EOF > ~/.gem/credentials
@@ -8,7 +10,6 @@ cat << EOF > ~/.gem/credentials
 EOF
 
 chmod 0600 ~/.gem/credentials
-set -x
 
 echo "Installing dependencies..."
 bundle install

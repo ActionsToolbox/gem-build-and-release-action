@@ -1,4 +1,4 @@
-name: "Gem Release Action"
+name: "Gem Build and Publish to Rubygems.org"
 author: "TGWolf"
 description: "A tool for releasing ruby gems to RubyGems.org."
 
