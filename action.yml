@@ -15,8 +15,8 @@ runs:
   using: 'docker'
   image: Dockerfile
   env:
-    RUBYGEMS_API_KEY: $ {{ inputs.rubygems-api-key }}
-    PUSH: $ {{ inputs.push }}
+    RUBYGEMS_API_KEY: ${{ inputs.rubygems-api-key }}
+    PUSH: ${{ inputs.push }}
 
 branding:
   icon: 'activity'
