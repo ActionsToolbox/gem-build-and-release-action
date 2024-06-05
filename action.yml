@@ -1,0 +1,23 @@
+name: "Gem Build and Publish to RubyGems.org"
+author: "TGWolf"
+description: "A tool for releasing ruby gems to RubyGems.org."
+
+inputs:
+  rubygems-api-key:
+    description: API Key for pushing to RubyGems.org
+    required: true
+  publish:
+    description: push the ruby gem to RubyGems.org
+    required: false
+    default: 'true'
+
+runs:
+  using: 'docker'
+  image: Dockerfile
+  env:
+    RUBYGEMS_API_KEY: ${{ inputs.rubygems-api-key }}
+    PUBLISH: ${{ inputs.publish }}
+
+branding:
+  icon: 'upload'
+  color: 'gray-dark'
